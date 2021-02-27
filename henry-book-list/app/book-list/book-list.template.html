@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12"><h1>Henry's Book List</h1></div>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+      <h2>Filter</h2>
+      <p>
+        Search:
+        <input
+          type="text"
+          class="form-control"
+          ng-model="$ctrl.query"
+          ng-change="$ctrl.filterBooks($ctrl.query)"
+          uib-typeahead="item for item in $ctrl.searchList() | filter:$viewValue"
+        />
+      </p>
+
+      <p>
+        Uppercase Titles?
+        <input type="checkbox" ng-model="$ctrl.allCaps" />
+      </p>
+    </div>
+    <div class="col-md-4">
+      <h2>Add New Book</h2>
+      <form novalidate class="css-form">
+        <label
+          >Title: <input type="text" ng-model="$ctrl.newBook.title" /></label
+        ><br />
+        <label
+          >Author: <input type="text" ng-model="$ctrl.newBook.author" /></label
+        ><br />
+        <label
+          >Publish Date:
+          <input type="text" ng-model="$ctrl.newBook.publishDate" /></label
+        ><br />
+        <span style="color: red">{{$ctrl.error}}</span><br />
+        <input type="submit" ng-click="$ctrl.addBook()" value="Add Book" />
+      </form>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <ul class="books" ui-sortable ng-model="$ctrl.filteredBooks">
+        <li
+          ng-repeat="book in $ctrl.filteredBooks"
+          class="thumbnail book-list-item"
+        >
+          <p>
+            <strong>Title: </strong>{{$ctrl.allCaps ? book.title.toUpperCase() :
+            book.title}}
+          </p>
+          <p><strong>Author: </strong>{{book.author}}</p>
+          <p><strong>Publish Date: </strong>{{book.publishDate}}</p>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+</div>

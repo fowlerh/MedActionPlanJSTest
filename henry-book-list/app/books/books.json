@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Ready Player One",
+    "author": "Ernest Cline",
+    "publishDate": "2011"
+  },
+  {
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "publishDate": "2011"
+  },
+  {
+    "title": "The Lightning Thief",
+    "author": "Rick Riordan",
+    "publishDate": "2005"
+  },
+  {
+    "title": "The Sword of Summer",
+    "author": "Rick Riordan",
+    "publishDate": "2015"
+  },
+  {
+    "title": "The Hidden Oracle",
+    "author": "Rick Riordan",
+    "publishDate": "2016"
+  }
+]
